@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Smoridina Calc</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+<!--    <link rel="stylesheet" href="dist/style.css">-->
+    <link rel="stylesheet/less" href="css/style.less">
+    <script src="scripts/less.js"></script>
+<!--    <script src="https://cdn.jsdelivr.net/npm/less" ></script>-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary py-0">
+        <div class="container-fluid">
+            <a class="navbar-brand py-0" href="#">
+                <img src="images/logo_f2.png" alt="logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Переключатель навигации">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav ms-auto">
+                    <a class="nav-link" href="#">Главная</a>
+                    <a class="nav-link" href="#">Реализация</a>
+                    <a class="nav-link" href="#">Эскизы</a>
+                    <a class="nav-link" href="#">Заполнить анкету</a>
+                </div>
+                <form class="d-flex ms-2" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Поиск" aria-label="Поиск">
+                    <button class="btn btn-outline-primary hvr-buzz-out" type="submit">Найти</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+</header>
+<section class="main container">
+    <h1 class="main__title mb-4">Калькулятор</h1>
+    <div class="row justify-content-center mx-0">
+        <div class="col-xl-8">
+            <div class="row pt-1">
+                <div class="main__left px-0 col-xl-8 col-md-8">
+                    <h3 class="main__left-title ">Рассчитайте стоимость работ</h3>
+                    <form class="formU  border-0" action="">
+                        <fieldset class="formU__page1">
+                            <div class="formU__label mt-3">Размер участка (в сотках)</div>
+                            <input type="text" class="form-control form-control__input" maxlength="10" name=""
+                                   id="razmerUch">
+                            <div class="error-input">Заполните размер участка</div>
+                            <div class="formU__label">Удаленность участка от Иркутска (в км)</div>
+                            <input type="text" class="form-control form-control__input" maxlength="10" name=""
+                                   id="udalFromIrkutsk">
+                            <div class="error-input">Заполните удаленность от города</div>
+                            <div class="formU__label">Топосъёмка участка</div>
+                            <div class="radio-btn-flex d-flex flex-wrap " >
+                            <label class="radio-btn">
+                                <input type="radio" value="yes" name="availability">
+                                <span>В наличии</span>
+                            </label>
+                            <label class="radio-btn">
+                                <input type="radio" value="none" name="availability" checked>
+                                <span>Отсутствует</span>
+                            </label>
+                            </div>
+                            <div class="formU__label">Время выполнения работ</div>
+                            <div class="radio-btn-flex d-flex flex-wrap " >
+                            <label class="radio-btn">
+                                <input type="radio" value="10" name="lead_time">
+                                <span>до 10 дней</span>
+                            </label>
+                            <label class="radio-btn">
+                                <input type="radio" value="30" name="lead_time" checked>
+                                <span>до 30 дней</span>
+                            </label>
+                            </div>
+                        </fieldset>
+                        <fieldset class="formU__page2 d-none">
+                            <div class="formU__page2-title text-center mt-3">Укажите виды работ</div>
+                            <label class="checkbox-btn page2">
+                                <input type="checkbox" value="GenPlan" name="types_of_work1[]">
+                                <span>Генеральный план участка</span>
+                            </label>
+                            <label class="checkbox-btn page2">
+                                <input type="checkbox" value="3DvisualProject" name="types_of_work1[]">
+                                <span>3D-визуализация проекта</span>
+                            </label>
+                            <label class="checkbox-btn page2">
+                                <input type="checkbox" value="SituationPlan" name="types_of_work1[]">
+                                <span>Ситуационный план</span>
+                            </label>
+                            <label class="checkbox-btn page2">
+                                <input type="checkbox" value="Dendrological" name="types_of_work1[]">
+                                <span>Дендрологический</span>
+                            </label>
+                        </fieldset>
+                        <fieldset class="formU__page3 d-none">
+                            <div class="formU__page3-title text-center mt-3">Укажите виды работ</div>
+                            <label class="checkbox-btn page3">
+                                <input type="checkbox" value="LightingSchemeProject" name="types_of_work2[]">
+                                <span>Схема освещения (проект)</span>
+                            </label>
+                            <label class="checkbox-btn page3">
+                                <input type="checkbox" value="DrainageSchemeProject" name="types_of_work2[]">
+                                <span>Схема водоотведения (проект)</span>
+                            </label>
+                            <label class="checkbox-btn page3">
+                                <input type="checkbox" value="AutomaticWateringSchemeProject" name="types_of_work2[]">
+                                <span>Схема автополива (проект)</span>
+                            </label>
+                        </fieldset>
+                        <fieldset class="formU__page4 d-none">
+                        </fieldset>
+                        <div class="main__left-page text-center mt-2">1/4</div>
+                    </form>
+                    <div class="poligonRight">
+                        <svg width="41" height="58" viewBox="0 0 41 58" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M38.1794 23.582C41.6777 26.3842 41.6777 31.7066 38.1794 34.5088L11.3762 55.9783C6.79357 59.6491 0 56.3865 0 50.5149L0 7.57583C0 1.70429 6.79357 -1.55829 11.3762 2.11245L38.1794 23.582Z"/>
+                        </svg>
+                    </div>
+                    <div class="poligonLeft">
+                        <svg width="42" height="58" viewBox="0 0 42 58" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3.32064 34.918C-0.177728 32.1158 -0.177724 26.7934 3.32064 23.9912L30.1238 2.52169C34.7064 -1.14905 41.5 2.11354 41.5 7.98508L41.5 50.9242C41.5 56.7957 34.7064 60.0583 30.1238 56.3875L3.32064 34.918Z"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="main__right col-xl-4 col-md-4 d-flex flex-column justify-content-end">
+                    <div class="main__itog mb-4 px-2">
+                        <div class="main__itog-text">
+                            Стоимость работ:
+                        </div>
+                        <div class="main__itog-price mb-4">0,00 руб</div>
+                    </div>
+                    <div class="main__right-sale_markup mb-2 px-2 d-none">
+                        <div class="markup d-none">Применена наценка за срочность выполнения работ на <span
+                                id="markup50">0.0 руб</span>.</div>
+                        <div class="sale d-none">Применена скидка за количество выбранных услуг <span id="sale">0.0
+                                                                                                          руб</span>.</div>
+                    </div>
+                    <div class="main__right-text mb-4 d-none">
+                        Закажите бесплатную консультацию специалиста* по выбранным услугам,
+                        срокам выполнения или иных вопросов.
+                    </div>
+                    <form class="needs-validation formU2Left mb-4 d-none" novalidate>
+                        <div class="row gx-3">
+                            <div class="col-sm-5">
+                                <label for="firstName" class="form-label">Имя</label>
+                                <input type="text" class="form-control mb-4" id="firstName" placeholder="" value=""
+                                       required>
+                                <div class="invalid-feedback">
+                                    Valid first name is required.
+                                </div>
+                            </div>
+                            <div class="col-sm-5">
+                                <label for="phone" class="form-label">Телефон</label>
+                                <input type="text" class="form-control mb-4" id="phone" placeholder="" value=""
+                                       required>
+                                <div class="invalid-feedback">
+                                    Valid phone is required.
+                                </div>
+                            </div>
+                            <div class="col-10">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control mb-4" id="email" placeholder="you@example.com"
+                                       required>
+                                <div class="invalid-feedback">
+                                    Please enter a valid email address for shipping updates.
+                                </div>
+                            </div>
+                        </div>
+                        <button  class="btn btn-primary mt-3" id="submit">Оформить заказ</button>
+                    </form>
+                    <div class="offer mb-3 d-none">
+                        * вводя персональные данные на нашем сайте,
+                        вы соглашаетесь с
+                        <span class="text-white">правилами оферты</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="scripts/bootstrap.bundle.js"></script>
+<script src="scripts/jquery-3.7.1.min.js"></script>
+<script src="scripts/jquery.inputmask.js"></script>
+<script src="scripts/script.js"></script>
+</body>
+</html>
